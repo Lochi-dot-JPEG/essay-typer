@@ -1,4 +1,30 @@
+/* From https://github.com/theorytoe/everforest-userstyles-css under GPL-3.0 license */
+:root {
+  --bg0: #2b3339;
+  --bg1: #323c41;
+  --bg2: #3a454a;
+
+  --fg0: #d3c6aa;
+  --green: #a7c080;
+  --tags-fg: #a7c08012;
+
+  --draw0: #248734;
+  --draw1: #2ba03e;
+  --draw2: #32ba48;
+  --draw3: #39d353;
+
+  --color-scale-gray-9: #2b3339 !important;
+}
+
 * {
-  background-color: purple;
-  color: white;
+  background-color: var(--bg0);
+  color: var(--fg0);
+  font-family: Arial, Helvetica, sans-serif;
+}
+p {
+  font-size: 1em;
+}
+body {
+  max-width: 700px;
+  margin: 35px auto;
 }
