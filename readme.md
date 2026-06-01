@@ -14,6 +14,8 @@ Text editor that attempts to mimic the limitations of writing on paper.
 ## TODO
 
 - [ ] Prototype in plain html/css/javascript
+- [ ] Deleting generating strikethrough markdown
+- [ ] Render markdown and hide textarea.
 
 ## Similar Projects
 
