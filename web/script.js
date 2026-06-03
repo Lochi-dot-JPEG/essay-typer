@@ -1,10 +1,20 @@
 let textAreaElement = document.getElementById("TypeArea");
+let markedOut = document.getElementById('markedout');
 let last_text = "";
 textAreaElement.setAttribute("oninput", "UpdatedText()");
+markedOut.setAttribute("onclick", "FocusTyping()");
 let backSpaceSize = 0;
 // Strikethrough markdown
 const st_length = 2
+showdown.setOption('strikethrough', 'true');
+let converter = new showdown.Converter();
 
+
+
+textAreaElement.focus()
+function FocusTyping() {
+	textAreaElement.focus()
+}
 function UpdatedText() {
 	let new_text = textAreaElement.value;
 
@@ -14,16 +24,22 @@ function UpdatedText() {
 		Backspace();
 	} else if (new_text.includes(last_text)) {
 		last_text = new_text;
-	} else {
-		textAreaElement.value = last_text;
+		// Create double newlines
+		if (new_text.substring(new_text.length - 1) == "\n") {
+			last_text += "\n"
+		}
 	}
+	MergeDeletions()
+	textAreaElement.value = last_text;
 	RenderMarkdown()
 
 }
 
 function RenderMarkdown() {
-	document.getElementById('markedout').innerHTML =
-		marked.parse(last_text);
+	//converter.text = '# hello, markdown!',
+	markedOut.innerHTML = converter.makeHtml(last_text + "|");
+	//markedOut.innerHTML =
+	//marked.parse(last_text + "|");
 }
 
 function Backspace() {
@@ -31,6 +47,9 @@ function Backspace() {
 
 	// Check has already backspaced
 	let last_letter = last_text.substring(last_text.length - 1);
+	if (last_letter == "\n") {
+		return;
+	}
 	let already_deleting = last_letter == "~";
 	// Extend deletion
 	if (already_deleting) {
@@ -69,21 +88,25 @@ function Backspace() {
 			last_text.length - deletion_length - st_length,
 			last_text.length - deletion_length - st_length - 1,
 		);
-		last_text = before_deletion + "~~" + add_to_deletion + already_deleted + "~~"
+		if (add_to_deletion == "\n") {
+			last_text += "~~"
+		} else {
+			last_text = before_deletion + "~~" + add_to_deletion + already_deleted + "~~"
+		}
+
 		// First character deletion
 	} else {
-		// Delete character
+		// Delete one character
+
 		last_text = last_text.substring(0, last_text.length - 1);
 		last_text = last_text + "~~";
 		last_text = last_text + last_letter + "~~";
 	}
-	MergeDeletions()
-	textAreaElement.value = last_text;
 }
 
+
 function MergeDeletions() {
-	while (last_text.includes("~~~~")) {
-		let index = last_text.indexOf("~~~~")
-		last_text = last_text.substring(0, index) + last_text.substring(index + 4)
-	}
+	last_text = last_text.replaceAll('~~~~', '~~');
+	last_text = last_text.replaceAll('\n\n\n', '\n\n');
+	//last_text = last_text.replaceAll(/'\n\n'/g, '\n');
 }

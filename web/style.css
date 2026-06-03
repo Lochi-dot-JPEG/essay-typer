@@ -16,8 +16,10 @@
   --color-scale-gray-9: #2b3339 !important;
 }
 
-* {
+body {
   background-color: var(--bg0);
+}
+* {
   color: var(--fg0);
   font-family: Monospace, Arial, Helvetica, sans-serif;
 }
@@ -33,4 +35,11 @@ textarea {
 body {
   max-width: 800px;
   margin: 35px auto;
+}
+
+.markdown {
+  background-color: var(--bg1);
+  padding: 10px;
+}
+.markdown * {
 }
