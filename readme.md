@@ -15,7 +15,7 @@ Text editor that attempts to mimic the limitations of writing on paper.
 
 - [ ] Prototype in plain html/css/javascript
 - [ ] Deleting generating strikethrough markdown
-- [ ] Render markdown and hide textarea.
+- [ ] [Render markdown](https://marked.js.org/) and hide textarea. 
 
 ## Similar Projects
 
