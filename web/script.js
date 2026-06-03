@@ -17,6 +17,13 @@ function UpdatedText() {
 	} else {
 		textAreaElement.value = last_text;
 	}
+	RenderMarkdown()
+
+}
+
+function RenderMarkdown() {
+	document.getElementById('markedout').innerHTML =
+		marked.parse(last_text);
 }
 
 function Backspace() {
@@ -70,5 +77,13 @@ function Backspace() {
 		last_text = last_text + "~~";
 		last_text = last_text + last_letter + "~~";
 	}
+	MergeDeletions()
 	textAreaElement.value = last_text;
+}
+
+function MergeDeletions() {
+	while (last_text.includes("~~~~")) {
+		let index = last_text.indexOf("~~~~")
+		last_text = last_text.substring(0, index) + last_text.substring(index + 4)
+	}
 }
