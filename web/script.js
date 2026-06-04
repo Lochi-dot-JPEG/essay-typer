@@ -104,5 +104,4 @@ function Backspace() {
 function MergeDeletions() {
   last_text = last_text.replaceAll("~~~~", "");
   last_text = last_text.replaceAll("\n\n\n", "\n\n");
-  //last_text = last_text.replaceAll(/'\n\n'/g, '\n');
 }

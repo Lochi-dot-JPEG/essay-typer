@@ -13,9 +13,15 @@ Text editor that attempts to mimic the limitations of writing on paper.
 
 ## TODO
 
-- [ ] Prototype in plain html/css/javascript
-- [ ] Deleting generating strikethrough markdown
-- [ ] [Render markdown](https://marked.js.org/) and hide textarea. 
+- [x] Prototype in plain html/css/javascript
+- [x] Deleting generating strikethrough markdown
+- [x] [Render markdown](https://marked.js.org/) and hide textarea. 
+
+- [ ] Timer
+- [ ] Starting session menu
+- [ ] Pausing and resuming timer
+- [ ] Saving documents
+
 
 ## Similar Projects
 
