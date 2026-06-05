@@ -30,6 +30,8 @@ h1 {
 }
 h2 {
   color: var(--blue);
+  padding: 0px;
+  margin: 0px;
 }
 p,
 li {
@@ -41,6 +43,7 @@ textarea {
   width: 100%;
   background-color: var(--bg1);
   border: none;
+  opacity: 0;
   margin: 8px 0px;
   outline: none;
   resize: none;

@@ -2,6 +2,7 @@ let timepick = document.getElementById("timepick");
 
 let newSession = document.getElementById("newSession");
 let typingMenu = document.getElementById("typingMenu");
+let continueButton = document.getElementById("continue");
 typingMenu.style.display = "none";
 newSession.style.display = "inherit";
 
@@ -13,6 +14,7 @@ p10.setAttribute("onclick", "ChangeTime(10)");
 p1.setAttribute("onClick", "ChangeTime(1)");
 m10.setAttribute("onclick", "ChangeTime(-10)");
 m1.setAttribute("onClick", "ChangeTime(-1)");
+continueButton.setAttribute("onClick", "Continue()");
 
 let start = document.getElementById("start");
 start.setAttribute("onClick", "Start()");
@@ -34,7 +36,14 @@ function RenderTime() {
 
 function Start() {
   StartTimer(picked_time);
+  textAreaElement.value = "";
+  continueButton.style.display = "none";
   typingMenu.style.display = "inherit";
   newSession.style.display = "none";
   FocusTyping();
+  RenderMarkdown();
+}
+function Continue() {
+  typingMenu.style.display = "none";
+  newSession.style.display = "inherit";
 }
