@@ -36,4 +36,5 @@ function Start() {
   StartTimer(picked_time);
   typingMenu.style.display = "inherit";
   newSession.style.display = "none";
+  FocusTyping();
 }

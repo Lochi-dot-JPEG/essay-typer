@@ -31,9 +31,15 @@ p {
 textarea {
   font-size: 1.5em;
   width: 100%;
-  background-color: var(--bg2);
+  background-color: var(--bg1);
   border: none;
-  margin: 8px;
+  margin: 8px 0px;
+  outline: none;
+  resize: none;
+}
+
+textarea:focus {
+  background-color: var(--bg2);
 }
 
 body {

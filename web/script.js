@@ -2,6 +2,7 @@ let textAreaElement = document.getElementById("TypeArea");
 let markedOut = document.getElementById("markedout");
 let last_text = "";
 textAreaElement.setAttribute("oninput", "UpdatedText()");
+textAreaElement.setAttribute("onblur", "FocusTyping()");
 markedOut.setAttribute("onclick", "FocusTyping()");
 let backSpaceSize = 0;
 // Strikethrough markdown
@@ -11,8 +12,13 @@ let converter = new showdown.Converter();
 
 textAreaElement.focus();
 function FocusTyping() {
-  textAreaElement.focus();
+  if (textAreaElement.checkVisibility()) {
+    textAreaElement.focus();
+    let l = last_text.length;
+    textAreaElement.setSelectionRange(l, l);
+  }
 }
+
 function UpdatedText() {
   let new_text = textAreaElement.value;
 
@@ -32,11 +38,12 @@ function UpdatedText() {
   RenderMarkdown();
 }
 
-function RenderMarkdown() {
-  //converter.text = '# hello, markdown!',
-  markedOut.innerHTML = converter.makeHtml(last_text + "|");
-  //markedOut.innerHTML =
-  //marked.parse(last_text + "|");
+function RenderMarkdown(addCaret = true) {
+  if (addCaret) {
+    markedOut.innerHTML = converter.makeHtml(last_text + "|");
+  } else {
+    markedOut.innerHTML = converter.makeHtml(last_text);
+  }
 }
 
 function Backspace() {
