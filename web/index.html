@@ -9,16 +9,30 @@
   <body>
     <h1>Typer</h1>
     <p>Introduction to the tool</p>
-    <div class="markdown" id="markedout"></div>
-    <textarea
-      autofocus
-      placeholder="Write your masterpiece"
-      rows="1"
-      id="TypeArea"
-    ></textarea>
-    <p id="Timer">timer</p>
+    <div id="newSession" style="text-align: center" class="box">
+      <h2>New Session</h2>
+      <div class="timeselect">
+        <button id="m10">-10</button>
+        <button id="m1">-1</button>
+        <p id="timepick">10min</p>
+        <button id="p1">+1</button>
+        <button id="p10">+10</button>
+      </div>
+      <button id="start" style="width: 70%; margin: 0 15%">Start</button>
+    </div>
+    <div id="typingMenu">
+      <div class="box markdown" id="markedout"></div>
+      <textarea
+        autofocus
+        placeholder="Write your masterpiece"
+        rows="1"
+        id="TypeArea"
+      ></textarea>
+      <p id="Timer">timer</p>
+    </div>
   </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
 <script src="/script.js"></script>
 <script src="/timer.js"></script>
+<script src="/session-manager.js"></script>

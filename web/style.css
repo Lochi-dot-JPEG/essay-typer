@@ -1,17 +1,18 @@
 /* From https://github.com/theorytoe/everforest-userstyles-css under GPL-3.0 license */
 :root {
-  --bg0: #2b3339;
-  --bg1: #323c41;
-  --bg2: #3a454a;
+  --bg0: #272e33;
+  --bg1: #2e383c;
+  --bg2: #374145;
+  --bg3: #414b50;
+  --bg4: #495156;
 
   --fg0: #d3c6aa;
-  --green: #a7c080;
-  --tags-fg: #a7c08012;
 
-  --draw0: #248734;
-  --draw1: #2ba03e;
-  --draw2: #32ba48;
-  --draw3: #39d353;
+  --red: #e67e80;
+  --bgred: #493b40;
+  --yellow: #dbbc7f;
+  --green: #a7c080;
+  --blue: #7fbbb3;
 
   --color-scale-gray-9: #2b3339 !important;
 }
@@ -40,9 +41,37 @@ body {
   margin: 35px auto;
 }
 
-.markdown {
+button {
+  background-color: var(--bg4);
+  border: 4px solid var(--bg4);
+  border-radius: 8px;
+  font-weight: bold;
+  min-height: 32px;
+}
+
+button:hover {
+  background-color: var(--bg3);
+  border: 5px solid var(--bg4);
+}
+button:active {
   background-color: var(--bg1);
+  border: 5px solid var(--bg3);
+}
+
+.markdown {
   padding: 10px;
 }
-.markdown * {
+
+.box {
+  background-color: var(--bg1);
+  padding: 16px;
+  margin: 16px 0px;
+}
+.timeselect {
+  display: flex;
+  justify-content: center;
+}
+.timeselect * {
+  margin: 8px;
+  min-width: 48px;
 }
