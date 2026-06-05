@@ -75,3 +75,8 @@ button:active {
   margin: 8px;
   min-width: 48px;
 }
+
+del {
+  background-color: var(--bgred);
+  color: var(--red);
+}

@@ -96,8 +96,10 @@ function Backspace() {
   } else {
     // Delete one character
     last_text = last_text.substring(0, last_text.length - 1);
-    last_text = last_text + "~~";
-    last_text = last_text + last_letter + "~~";
+    if (last_letter != " ") {
+      last_text = last_text + "~~";
+      last_text = last_text + last_letter + "~~";
+    }
   }
 }
 
