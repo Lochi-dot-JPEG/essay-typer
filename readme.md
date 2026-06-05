@@ -17,9 +17,14 @@ Text editor that attempts to mimic the limitations of writing on paper.
 - [x] Deleting generating strikethrough markdown
 - [x] [Render markdown](https://marked.js.org/) and hide textarea. 
 
-- [ ] Timer
-- [ ] Starting session menu
+- [x] Timer
+- [x] Starting session menu
 - [ ] Pausing and resuming timer
+- [ ] Saving each session
+- [ ] Exporting sessions
+    - [ ] Exporting with/without deletions
+- [ ] Settings
+    - [ ] Don't keep deletions.
 - [ ] Saving documents
 
 
