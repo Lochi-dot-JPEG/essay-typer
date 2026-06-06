@@ -44,6 +44,7 @@ function Start() {
   RenderMarkdown();
 }
 function Continue() {
+  SaveFile(textAreaElement.value);
   typingMenu.style.display = "none";
   newSession.style.display = "inherit";
 }

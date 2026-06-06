@@ -97,3 +97,7 @@ del {
   background-color: var(--bgred);
   color: var(--red);
 }
+
+summary h2 {
+  display: inline;
+}

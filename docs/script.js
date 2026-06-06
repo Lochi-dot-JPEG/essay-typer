@@ -7,8 +7,6 @@ markedOut.setAttribute("onclick", "FocusTyping()");
 let backSpaceSize = 0;
 // Strikethrough markdown
 const st_length = 2;
-showdown.setOption("strikethrough", "true");
-let converter = new showdown.Converter();
 
 textAreaElement.focus();
 function FocusTyping() {
@@ -74,7 +72,7 @@ function Backspace() {
         deletion_length += 1;
       }
       // Avoid infinite loop if bugged
-      if (deletion_length > 1024) {
+      if (deletion_length > 5000) {
         console.log("overflowed");
         searching = false;
       }
