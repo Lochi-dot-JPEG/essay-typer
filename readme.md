@@ -1,16 +1,22 @@
 # Hand Typer
 
-Text editor software that places restrictions on text deletion to force chronological editing. This will help build the skills for typing coherent essays without relying on the advantages of digital tools for fast iteration.
+A text editor that attempts to mimic the limitations of writing on paper.
+
+Hand Typer places restrictions on text deletion to force chronological editing. This will help build the skills for typing coherent essays without relying on the advantages of digital tools for fast iteration.
+
+I made this as a tool to try to help with my school work while writing essays and to learn javascript :)
 
 Made for hackclub horizons!
 
-## Premise
+## Usage
 
-A text editor that attempts to mimic the limitations of writing on paper.
-
-Hand Typer places restrictions on text editing to force chronological typing. This will help build the skills for typing coherent Hands by hand without relying on the advantages of digital tools for fast iteration.
-
-I made this as a tool to try to help with my school work while writing essays and to learn javascript :)
+1. Start a writing session from the type page
+- You can pause writing at any time and reload the webpage to continue where you left off.
+3. Press done to finish writing or write until the timer runs out.
+4. Browse your completed documents in the documents page.
+- Click on any timestamp to expand the document
+- There is a button to copy the text as plain markdown for use in other software
+- There is a button to delete any document. These deletions are permanent. Be careful.
 
 ## Screenshots
 
@@ -39,25 +45,3 @@ I made this as a tool to try to help with my school work while writing essays an
 ## Credits
 
 - [Everforest colourscheme](href="https://github.com/sainnhe/everforest") by sainnhe
-
-## TODO
-
-- [x] Prototype in plain html/css/javascript
-- [x] Deleting generating strikethrough markdown
-- [x] [Render markdown](https://marked.js.org/) and hide textarea. 
-- [x] Timer
-- [x] Starting session menu
-- [x] Saving each session
-- [x] Pausing and resuming timer
-- [x] Ending timer early
-- [x] Closed tab session recovery
-- [ ] Deleting sessions from documents tab
-- [ ] Exporting sessions without deletions
-- [ ] Settings: 
-    - [ ] Most dangerous writing app mode
-
-
-## Similar Projects
-
-- [The most dangerous writing app](https://en.wikipedia.org/wiki/The_Most_Dangerous_Writing_App)
-
