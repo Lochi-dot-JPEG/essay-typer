@@ -23,16 +23,52 @@ function LoadDocuments(index) {
     var docContent = JSON.parse(`"${index[content][1]}"`);
 
     docsList.innerHTML +=
-      "<details><summary><div class='document '>" +
-      "<h2>" +
+      "<div class='bordered'> <div class=buttons><button onClick='DeleteDocument(" +
+      docName +
+      ")'>Delete</button>" +
+      "<button onClick=\"Copy('" +
+      JSON.stringify(docContent).slice(1, -1) +
+      "')\">Copy Markdown</button></div>" +
+      "<details><summary><h2>" +
       formattedTime +
-      "  </h2></div>" +
-      "<button>Delete</button>" +
-      "<button>Copy Markdown</button>" +
+      "  </h2>" +
       '</summary><div class="box">' +
       converter.makeHtml(docContent);
-    +"</div></details>";
+    +"</div></details></div>";
   }
+}
+
+function Copy(text) {
+  console.log(text);
+  navigator.clipboard.writeText(JSON.parse(`"${text}"`)).then(
+    () => {
+      console.log("Text successfully copied!");
+    },
+    () => {
+      console.error("Failed to copy text: ", err);
+    },
+  );
+}
+function DeleteDocument(name) {
+  if (!confirm("Do you want to delete this?")) {
+    return;
+  }
+  let index = localStorage.getItem("docsIndex");
+  if (!index) {
+    return;
+  }
+  let newIndex = "";
+  const split = index.split("\n");
+  for (var line in split) {
+    if (!split[line].startsWith(name)) {
+      newIndex += "\n" + split[line];
+    } else {
+      console.log("removes " + name);
+    }
+  }
+
+  localStorage.setItem("docsIndex", newIndex.trim());
+  location.reload();
 }
 
 function GetDocuments() {
@@ -66,7 +102,7 @@ function SaveFile(markdown) {
     JSON.stringify(markdown).slice(1, -1) +
     index;
 
-  localStorage.setItem("docsIndex", index);
+  localStorage.setItem("docsIndex", index.trim());
   localStorage.setItem("autosave", "");
 }
 
