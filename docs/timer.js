@@ -13,6 +13,9 @@ function StartTimer(minutes) {
 }
 
 function TickTimer() {
+  if (Paused) {
+    return;
+  }
   seconds_remaining--;
   if (seconds_remaining < 0) {
     seconds_remaining = 0;

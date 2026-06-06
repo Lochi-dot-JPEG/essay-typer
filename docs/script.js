@@ -1,4 +1,6 @@
 let textAreaElement = document.getElementById("TypeArea");
+let pauseButton = document.getElementById("pause");
+pauseButton.setAttribute("onclick", "Pause()");
 let markedOut = document.getElementById("markedout");
 let last_text = "";
 textAreaElement.setAttribute("oninput", "UpdatedText()");
@@ -7,6 +9,7 @@ markedOut.setAttribute("onclick", "FocusTyping()");
 let backSpaceSize = 0;
 // Strikethrough markdown
 const st_length = 2;
+let Paused = false;
 
 textAreaElement.focus();
 function FocusTyping() {
@@ -115,4 +118,16 @@ function Backspace() {
 function MergeDeletions() {
   last_text = last_text.replaceAll("~~~~", "");
   last_text = last_text.replaceAll("\n\n\n", "\n\n");
+}
+function Pause() {
+  Paused = !Paused;
+  if (Paused) {
+    textAreaElement.setAttribute("disabled", "");
+    markedOut.style.opacity = "0.5";
+    pauseButton.innerText = "Unpause";
+  } else {
+    textAreaElement.removeAttribute("disabled");
+    markedOut.style.opacity = "1";
+    pauseButton.innerText = "Pause";
+  }
 }

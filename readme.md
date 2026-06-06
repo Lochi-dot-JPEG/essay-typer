@@ -41,8 +41,9 @@ TODO
 - [x] Timer
 - [x] Starting session menu
 - [x] Saving each session
-- [ ] Pausing and resuming timer
-- [ ] Ending timer early
+- [x] Pausing and resuming timer
+- [x] Ending timer early
+- [ ] Closed tab session recovery
 - [ ] Exporting sessions
     - [ ] Exporting with/without deletions
 - [ ] Settings: 
