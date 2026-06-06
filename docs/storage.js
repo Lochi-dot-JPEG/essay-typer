@@ -23,11 +23,15 @@ function LoadDocuments(index) {
     var docContent = JSON.parse(`"${index[content][1]}"`);
 
     docsList.innerHTML +=
-      "<details><summary><h2>" +
+      "<details><summary><div class='document '>" +
+      "<h2>" +
       formattedTime +
-      "</h2></summary><p>" +
+      "  </h2></div>" +
+      "<button>Delete</button>" +
+      "<button>Copy Markdown</button>" +
+      '</summary><div class="box">' +
       converter.makeHtml(docContent);
-    +"</p></details>";
+    +"</div></details>";
   }
 }
 

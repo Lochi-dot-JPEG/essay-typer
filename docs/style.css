@@ -67,12 +67,30 @@ button {
 }
 
 button:hover {
-  background-color: var(--bg3);
+  background-color: var(--bg2);
   border: 4px solid var(--bg4);
 }
 button:active {
   background-color: var(--bg1);
   border: 4px solid var(--bg3);
+}
+
+summary {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary div:not(:has(.child:hover)):hover {
+  background-color: var(--bg2);
+}
+summary div:not(:has(.child:active)):active {
+  background-color: var(--bg1);
 }
 
 .markdown {
@@ -84,6 +102,15 @@ button:active {
   padding: 16px;
   margin: 16px 0px;
 }
+
+.document {
+  display: inline-block;
+  background-color: var(--bg1);
+  flex-grow: 1;
+  justify-content: center;
+  vertical-align: middle;
+}
+
 .timeselect {
   display: flex;
   justify-content: center;
@@ -98,6 +125,7 @@ del {
   color: var(--red);
 }
 
-summary h2 {
-  display: inline;
+summary * {
+  margin: 8px;
+  align-self: center;
 }
