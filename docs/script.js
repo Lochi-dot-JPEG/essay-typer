@@ -25,9 +25,13 @@ function UpdatedText() {
   if (new_text == cut_last_text) {
     Backspace();
   } else if (new_text.includes(last_text)) {
-    last_text = new_text;
+    let last_character = new_text.substring(new_text.length - 1);
+    if (last_character != "~") {
+      // Don't allow tildes
+      last_text = new_text;
+    }
     // Create double newlines
-    if (new_text.substring(new_text.length - 1) == "\n") {
+    if (last_character == "\n") {
       last_text += "\n";
     }
   }
