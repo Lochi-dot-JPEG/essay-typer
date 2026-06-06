@@ -126,6 +126,7 @@ function Pause() {
     textAreaElement.setAttribute("disabled", "");
     markedOut.style.opacity = "0.5";
     pauseButton.innerText = "Unpause";
+    AutoSave();
   } else {
     textAreaElement.removeAttribute("disabled");
     markedOut.style.opacity = "1";

@@ -96,10 +96,10 @@ function SaveFile(markdown) {
     index = "";
   }
   index =
-    "\n" +
     String(Date.now()) +
     name_content_delimitter +
     JSON.stringify(markdown).slice(1, -1) +
+    "\n" +
     index;
 
   localStorage.setItem("docsIndex", index.trim());
