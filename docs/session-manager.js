@@ -35,8 +35,12 @@ function RenderTime() {
   timepick.innerHTML = picked_time + "min";
 }
 
-function Start() {
-  StartTimer(picked_time);
+function Start(time_override = -1) {
+  if (time_override != -1) {
+    StartTimer(time_override);
+  } else {
+    StartTimer(picked_time);
+  }
   textAreaElement.value = "";
   continueButton.innerText = "Done";
   typingMenu.style.display = "inherit";
@@ -46,9 +50,9 @@ function Start() {
   RenderMarkdown();
 }
 function Continue() {
-  SaveFile(textAreaElement.value);
+  SaveFile(last_text);
   typingMenu.style.display = "none";
   newSession.style.display = "inherit";
   navElement.style.display = "inherit";
-  window.open("documents.html");
+  window.location.href = "documents.html";
 }

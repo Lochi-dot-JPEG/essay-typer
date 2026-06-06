@@ -6,10 +6,11 @@ let last_text = "";
 textAreaElement.setAttribute("oninput", "UpdatedText()");
 textAreaElement.setAttribute("onblur", "FocusTyping()");
 markedOut.setAttribute("onclick", "FocusTyping()");
+
 let backSpaceSize = 0;
 // Strikethrough markdown
 const st_length = 2;
-let Paused = false;
+let Paused = true;
 
 textAreaElement.focus();
 function FocusTyping() {
@@ -129,5 +130,12 @@ function Pause() {
     textAreaElement.removeAttribute("disabled");
     markedOut.style.opacity = "1";
     pauseButton.innerText = "Pause";
+    FocusTyping();
   }
 }
+
+window.addEventListener("load", (event) => {
+  if (localStorage.getItem("autosave") != "") {
+    LoadAutoSave();
+  }
+});

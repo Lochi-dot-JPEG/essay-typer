@@ -63,8 +63,34 @@ function SaveFile(markdown) {
     index;
 
   localStorage.setItem("docsIndex", index);
+  localStorage.setItem("autosave", "");
 }
 
 if (docsList) {
   LoadDocuments(GetDocuments());
+}
+
+function LoadAutoSave() {
+  const json_data = localStorage.getItem("autosave");
+  const autosave_data = JSON.parse(json_data);
+
+  Start(autosave_data.seconds_remaining / 60);
+  last_text = autosave_data.current_text;
+  if (!Paused) {
+    Pause();
+  }
+  RenderMarkdown();
+}
+
+function AutoSave() {
+  if (textAreaElement.value == "") {
+    return;
+  }
+  const autosaved_file = {
+    seconds_remaining: seconds_remaining,
+    current_text: textAreaElement.value,
+  };
+  const autosave_json = JSON.stringify(autosaved_file);
+
+  localStorage.setItem("autosave", autosave_json);
 }

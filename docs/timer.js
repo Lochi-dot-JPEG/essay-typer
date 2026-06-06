@@ -3,9 +3,11 @@ setInterval(TickTimer, 1000); // Tick timer every second
 
 let ticks = 0;
 let seconds_remaining = 0;
+const autosave_frequency = 10;
 
 function StartTimer(minutes) {
-  seconds_remaining = minutes * 60;
+  Paused = false;
+  seconds_remaining = Math.round(minutes * 60);
 
   textAreaElement.removeAttribute("disabled");
   last_text = "";
@@ -19,6 +21,9 @@ function TickTimer() {
   seconds_remaining--;
   if (seconds_remaining < 0) {
     seconds_remaining = 0;
+  }
+  if (seconds_remaining % autosave_frequency == 0) {
+    AutoSave();
   }
   UpdateDisplay();
 }

@@ -43,7 +43,7 @@ TODO
 - [x] Saving each session
 - [x] Pausing and resuming timer
 - [x] Ending timer early
-- [ ] Closed tab session recovery
+- [x] Closed tab session recovery
 - [ ] Exporting sessions
     - [ ] Exporting with/without deletions
 - [ ] Settings: 
