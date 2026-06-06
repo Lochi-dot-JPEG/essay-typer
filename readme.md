@@ -1,4 +1,4 @@
-# Essay Style Typer
+# Hand Typer
 
 Text editor software that places restrictions on text deletion to force chronological editing. This will help build the skills for typing coherent essays without relying on the advantages of digital tools for fast iteration.
 

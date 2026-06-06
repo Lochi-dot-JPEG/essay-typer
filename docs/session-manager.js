@@ -1,4 +1,5 @@
 let timepick = document.getElementById("timepick");
+let navElement = document.getElementById("nav");
 
 let newSession = document.getElementById("newSession");
 let typingMenu = document.getElementById("typingMenu");
@@ -37,9 +38,10 @@ function RenderTime() {
 function Start() {
   StartTimer(picked_time);
   textAreaElement.value = "";
-  continueButton.style.display = "none";
+  continueButton.innerText = "Done";
   typingMenu.style.display = "inherit";
   newSession.style.display = "none";
+  navElement.style.display = "none";
   FocusTyping();
   RenderMarkdown();
 }
@@ -47,4 +49,6 @@ function Continue() {
   SaveFile(textAreaElement.value);
   typingMenu.style.display = "none";
   newSession.style.display = "inherit";
+  navElement.style.display = "inherit";
+  window.open("documents.html");
 }

@@ -34,8 +34,7 @@ function UpdateDisplay() {
 function StopTyping() {
   RenderMarkdown(false);
   textAreaElement.setAttribute("disabled", "");
-  continueButton.style.display = "inherit";
+  continueButton.innerText = "Continue";
 }
 
-StartTimer(2);
 UpdateDisplay();
