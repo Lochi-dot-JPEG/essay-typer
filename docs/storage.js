@@ -31,7 +31,7 @@ function LoadDocuments(index) {
       "')\">Copy Markdown</button></div>" +
       "<details><summary><h2>" +
       formattedTime +
-      "  </h2>" +
+      "</h2>" +
       '</summary><div class="box">' +
       converter.makeHtml(docContent);
     +"</div></details></div>";
@@ -40,7 +40,7 @@ function LoadDocuments(index) {
 
 function Copy(text) {
   console.log(text);
-  navigator.clipboard.writeText(JSON.parse(`"${text}"`)).then(
+  navigator.clipboard.writeText(text).then(
     () => {
       console.log("Text successfully copied!");
     },
