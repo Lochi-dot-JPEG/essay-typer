@@ -8,6 +8,8 @@ I made this as a tool to try to help with my school work while writing essays an
 
 Made for hackclub horizons!
 
+AI was not used for this project.
+
 ## Usage
 
 1. Start a writing session from the type page
