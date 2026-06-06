@@ -56,11 +56,11 @@ function SaveFile(markdown) {
     index = "";
   }
   index =
-    index +
     "\n" +
     String(Date.now()) +
     name_content_delimitter +
-    JSON.stringify(markdown).slice(1, -1);
+    JSON.stringify(markdown).slice(1, -1) +
+    index;
 
   localStorage.setItem("docsIndex", index);
 }
