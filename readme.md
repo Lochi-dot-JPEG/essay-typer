@@ -2,6 +2,8 @@
 
 Text editor software that places restrictions on text deletion to force chronological editing. This will help build the skills for typing coherent essays without relying on the advantages of digital tools for fast iteration.
 
+Made for hackclub horizons!
+
 ## Premise
 
 A text editor that attempts to mimic the limitations of writing on paper.
@@ -12,7 +14,11 @@ I made this as a tool to try to help with my school work while writing essays an
 
 ## Screenshots
 
-TODO
+![screenshot1](images/ss1.png)
+
+![screenshot2](images/ss2.png)
+
+![screenshot3](images/ss3.png)
 
 ## Features
 
@@ -21,6 +27,7 @@ TODO
 - No editing previous paragraphs.
 - Saves documents to local browser storage
 - Markdown rendering support
+- Autosaves your session unless you accidentally close the window
 
 
 ## Technologies
@@ -44,8 +51,8 @@ TODO
 - [x] Pausing and resuming timer
 - [x] Ending timer early
 - [x] Closed tab session recovery
-- [ ] Exporting sessions
-    - [ ] Exporting with/without deletions
+- [ ] Deleting sessions from documents tab
+- [ ] Exporting sessions without deletions
 - [ ] Settings: 
     - [ ] Most dangerous writing app mode
 
